@@ -9,7 +9,7 @@ use App\Models\Upa;
 class UpaController extends Controller
 {
     function editar($id) {
-        $upa = Upa::orderBy('nome')->get();
+        $upa = Upa::find($id);
         return view('forms.Upa-form', compact('upa'));
     }
 
