@@ -25,3 +25,9 @@ Route::get('/upa/novo', [UpaController::class, 'novo']);
 Route::get('/upa/editar/{id}', [UpaController::class, 'editar']);
 Route::get('/upa/excluir/{id}', [UpaController::class, 'excluir']);
 Route::post('/upa/salvar', [UpaController::class, 'salvar']);
+
+Route::get('/medico/listar', [UpaController::class, 'listar']);
+Route::get('/medico/novo', [UpaController::class, 'novo']);
+Route::get('/medico/editar/{id}', [UpaController::class, 'editar']);
+Route::get('/medico/excluir/{id}', [UpaController::class, 'excluir']);
+Route::post('/medico/salvar', [UpaController::class, 'salvar']);

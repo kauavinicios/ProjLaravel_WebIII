@@ -54,10 +54,10 @@ CREATE TABLE recepicionistas (
 
 
 insert into upas(nome, localizacao)
-values('upa1', 'logo ali'),
-      ('upa2', 'depois de logo ali'),
-      ('upa3', 'logo la'),
-      ('upa4', 'depois de logo la');
+values('UPA MORENINHA', 'logo ali nas morenas'),
+      ('CRS AERO RANCHO', 'depois um  pouco das morenas'),
+      ('CRS COOPHAVILLA', 'nem sei onde fica'),
+      ('UPA LEBLON', 'piorou esse');
 
 insert into especialidades(nome, area, descricao)
 values('Pediatra', 1, 'Concentra-se no cuidado de crianças, desde o nascimento até a adolescência.'),
@@ -88,21 +88,15 @@ values('bruce', '12345678910', 1),
       ('mauro', '12345678913', 4);
 
 insert into assisSociais(nome, cpf, email, especialidade, afiliacao)
-values('rivotril', 'bom pro estresse'),
-      ('dorflex', 'bom para dores no corpo'),
-      ('viagra', 'potencializa o soudado abatido'),
-      ('dipirona', 'ajuda com a dor de cabeça');
+values('suelem', '12345678914', 'suelem@gmail.com', 1, 2),
+      ('giovana', '12345678915', 'giovana@gmail.com', 2, 3),
+      ('nilza', '12345678916', 'nilza@gmail.com', 3, 4),
+      ('jubscleia', '12345678917', 'jubscleia@gmail.com', 4, 1);
 
-insert into farmRemedios(idFarm, idRemedio, preco, qnt)
-values(1, 2, 30, 50),
-      (3, 3, 79, 70),
-      (2, 2, 9.90, 70),
-      (4, 3, 50.30, 100),
-      (4, 1, 7.99, 40),
-      (1, 1, 67.78, 90);
-
-insert into receitas(descricao, qnt, medicoId, enfermeiraId, remedioId)
-values('ele ta mau', 1, 4, 2, 3),
-      ('esse ta pessimo', 15, 2, 1, 4),
-      ('vc vai melhorar', 2, 3, 3, 2),
-      ('bora meu garoto', 2, 1, 4, 2);
+insert into recepicionistas(nome, cpf, email, afiliacao)
+values('visentina', '12345678918', 'visentina@gmail.com', 1),
+      ('joana', '12345678919', 'joana@gmail.com', 3),
+      ('brunilda', '12345678920', 'brunilda@gmail.com', 1),
+      ('josefina', '12345678921', 'josefina@gmail.com', 4),
+      ('isadora', '12345678922', 'isadora@gmail.com', 2),
+      ('elina', '12345678923', 'elina@gmail.com', 2);
