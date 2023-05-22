@@ -5,13 +5,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UpaController;
 
 /*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
+|------------------------------------------------- -------------------------
+| Rotas da Web
+|------------------------------------------------- -------------------------
 |
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
+| Aqui é onde você pode registrar rotas da web para seu aplicativo. Esses
+| as rotas são carregadas pelo RouteServiceProvider e todas elas serão
+| ser atribuído ao grupo de middleware "web". Faça algo ótimo!
 |
 */
 
