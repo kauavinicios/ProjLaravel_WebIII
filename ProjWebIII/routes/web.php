@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UpaController;
+use App\Http\Controllers\MedicoController;
+use App\Http\Controllers\EspecialidadeController;
+use App\Http\Controllers\EnfermeiraController;
 
 /*
 |------------------------------------------------- -------------------------
@@ -26,8 +29,20 @@ Route::get('/upa/editar/{id}', [UpaController::class, 'editar']);
 Route::get('/upa/excluir/{id}', [UpaController::class, 'excluir']);
 Route::post('/upa/salvar', [UpaController::class, 'salvar']);
 
-Route::get('/medico/listar', [UpaController::class, 'listar']);
-Route::get('/medico/novo', [UpaController::class, 'novo']);
-Route::get('/medico/editar/{id}', [UpaController::class, 'editar']);
-Route::get('/medico/excluir/{id}', [UpaController::class, 'excluir']);
-Route::post('/medico/salvar', [UpaController::class, 'salvar']);
+Route::get('/medico/listar', [MedicoController::class, 'listar']);
+Route::get('/medico/novo', [MedicoController::class, 'novo']);
+Route::get('/medico/editar/{id}', [MedicoController::class, 'editar']);
+Route::get('/medico/excluir/{id}', [MedicoController::class, 'excluir']);
+Route::post('/medico/salvar', [MedicoController::class, 'salvar']);
+
+Route::get('/especialidade/listar', [EspecialidadeController::class, 'listar']);
+Route::get('/especialidade/novo', [EspecialidadeController::class, 'novo']);
+Route::get('/especialidade/editar/{id}', [EspecialidadeController::class, 'editar']);
+Route::get('/especialidade/excluir/{id}', [EspecialidadeController::class, 'excluir']);
+Route::post('/especialidade/salvar', [EspecialidadeController::class, 'salvar']);
+
+Route::get('/enfermeira/listar', [EnfermeiraController::class, 'listar']);
+Route::get('/enfermeira/novo', [EnfermeiraController::class, 'novo']);
+Route::get('/enfermeira/editar/{id}', [EnfermeiraController::class, 'editar']);
+Route::get('/enfermeira/excluir/{id}', [EnfermeiraController::class, 'excluir']);
+Route::post('/enfermeira/salvar', [EnfermeiraController::class, 'salvar']);

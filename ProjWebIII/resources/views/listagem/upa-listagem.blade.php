@@ -15,7 +15,7 @@
     <section class="upas">
         <div class="upas-int">
             <h1>Listagem de upas</h1>
-            <a class="btn btn-primary" href="/upa/novo">Novo</a>
+            <a class="btn btn-primary" href="novo">Novo</a>
             <table class="table table-bordered table-striped">
                 <thead>
                 <tr>

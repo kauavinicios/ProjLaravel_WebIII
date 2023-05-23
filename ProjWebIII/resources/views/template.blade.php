@@ -9,6 +9,7 @@
     <title>Trabalho Web</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/navbar-fixed/">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -98,13 +99,13 @@
                         <a class="nav-link active" aria-current="page" href="{{url('/upa/listar')}}">Upas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{url('/news')}}">Medicos</a>
+                        <a class="nav-link active" aria-current="page" href="{{url('/medico/listar')}}">Medicos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{url('/news')}}">Enfermeiras</a>
+                        <a class="nav-link active" aria-current="page" href="{{url('/especialidade/listar')}}">Especialidades</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{url('/news')}}">Farmacias</a>
+                        <a class="nav-link active" aria-current="page" href="{{url('/enfermeira/listar')}}">Enfermeiras</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{{url('/news')}}">Remédio</a>
