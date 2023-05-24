@@ -13,9 +13,9 @@ class MedicoController extends Controller
     function editar($id) {
         $area = 1;
         $medico = Medico::find($id);
-        $upas = Especialidade::orderBy('nome')->get();
-        $especialidades = Especialidade::find($area);
-        return view('forms.medico-form', compact('medico', 'upas', 'especialidades'));
+        $upas = Upa::orderBy('nome')->get();
+        $especialidades = Especialidade::orderBy('nome')->get();
+        return view('forms.medico-form', compact('medico', 'upas', 'especialidades', 'area'));
     }
 
     function listar() {
@@ -27,12 +27,13 @@ class MedicoController extends Controller
         $area = 1;
         $medico = new Medico();
         $medico['id'] = 0;
+        $especialidades = Especialidade::orderBy('id')->get();
         $upas = Upa::orderBy('nome')->get();
-        $especialidades = Especialidade::orderBy('nome')->get();
-        return view('forms.medico-form', compact('medico', 'upas', 'especialidades'));
+        return view('forms.medico-form', compact('medico','upas','especialidades', 'area'));
     }
 
     function salvar(MedicoRequest $request) {
+
         if ($request->input('id') == 0) {
             $medico = new Medico();
         } else {

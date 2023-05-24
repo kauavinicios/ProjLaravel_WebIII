@@ -44,7 +44,7 @@ CREATE TABLE assisSociais (
                           upa_id INT REFERENCES upas(id) ON DELETE CASCADE
 );
 
-CREATE TABLE recepicionistas (
+CREATE TABLE recepcionistas (
                              id SERIAL NOT NULL PRIMARY KEY,
                              nome VARCHAR(50),
                              cpf VARCHAR(11) UNIQUE,
@@ -93,7 +93,7 @@ values('suelem', '12345678914', 'suelem@gmail.com', 1, 2),
       ('nilza', '12345678916', 'nilza@gmail.com', 3, 4),
       ('jubscleia', '12345678917', 'jubscleia@gmail.com', 4, 1);
 
-insert into recepicionistas(nome, cpf, email, upa_id)
+insert into recepcionistas(nome, cpf, email, upa_id)
 values('visentina', '12345678918', 'visentina@gmail.com', 1),
       ('joana', '12345678919', 'joana@gmail.com', 3),
       ('brunilda', '12345678920', 'brunilda@gmail.com', 1),

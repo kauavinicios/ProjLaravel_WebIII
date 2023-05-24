@@ -11,7 +11,7 @@
         </div>
         <div class="mb-3">
             <label for="cpf" class="form-label">CPF</label>
-            <input class="form-control" type="number" name="cpf" value="{{$enfermeira->cpf}}">
+            <input class="form-control" type="text" name="cpf" value="{{$enfermeira->cpf}}">
         </div>
         <div class="mb-3">
             <label for="datanascimento" class="form-label">Data De Nascimento</label>
