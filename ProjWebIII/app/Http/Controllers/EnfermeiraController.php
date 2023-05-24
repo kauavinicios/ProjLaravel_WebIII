@@ -10,7 +10,8 @@ class EnfermeiraController extends Controller
 {
     function editar($id) {
         $enfermeira = Enfermeira::find($id);
-        return view('forms.enfermeira-form', compact('enfermeira'));
+        $upas = Upa::orderBy("nome")->get();
+        return view('forms.enfermeira-form', compact('enfermeira', 'upas'));
     }
 
     function listar() {

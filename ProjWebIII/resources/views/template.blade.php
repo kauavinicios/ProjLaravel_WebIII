@@ -108,7 +108,7 @@
                         <a class="nav-link active" aria-current="page" href="{{url('/enfermeira/listar')}}">Enfermeiras</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{url('/news')}}">Remédio</a>
+                        <a class="nav-link active" aria-current="page" href="{{url('/recepcionista/listar')}}">Recepcionista</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{{url('/news')}}">Registro de Estoque</a>

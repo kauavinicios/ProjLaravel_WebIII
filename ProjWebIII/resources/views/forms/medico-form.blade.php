@@ -13,6 +13,7 @@
     <script>console.log({{$especialidades}}+"-ili")</script>
     <h1>Cadastro de Medico</h1>
     <form action="{{url('medico/salvar')}}" method="post">
+        @csrf
         <input type="hidden" name="id" value="{{$medico->id}}">
         <div class="mb-3">
             <label for="nome" class="form-label">Nome</label>
@@ -36,10 +37,12 @@
             @enderror
         </div>
         <div class="mb-3">
-            <label for="especialidade_id" class="form-label">Afiliação</label>
+            <label for="especialidade_id" class="form-label">Especialidade</label>
             <select class="form-select @error('especialidade_id') is-invalid @enderror" name="especialidade_id" >
                 @foreach($especialidades as $especialidade)
-                    <option {{ $especialidade->id == $medico->especialidade_id ?'selected': ''}} value="{{$especialidade->id}}">{{$especialidade->nome}}</option>
+                    @if($especialidade->area == $area)
+                     <option {{ $especialidade->id == $medico->especialidade_id ?'selected': ''}} value="{{$especialidade->id}}">{{$especialidade->nome}}</option>
+                    @endif
                 @endforeach
             </select>
             @error('especialidade_id')

@@ -11,7 +11,7 @@ class MedicoRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,8 +25,8 @@ class MedicoRequest extends FormRequest
             'nome' => 'required',
             'datanascimento' => 'required',
             'crm' => 'required',
-            'especialidade_id' => 'required|exists:especialidade,id',
-            'upa_id' => 'required|exists:upa,id'
+            'especialidade_id' => 'required|exists:especialidades,id',
+            'upa_id' => 'required|exists:upas,id'
         ];
     }
 
