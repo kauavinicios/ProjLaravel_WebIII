@@ -1,14 +1,15 @@
 CREATE TABLE upas (
                       id SERIAL NOT NULL PRIMARY KEY,
                       nome VARCHAR(100) not null,
-                      localizacao VARCHAR(100)
+                      localizacao VARCHAR(100),
+                      imagem VARCHAR(100)
 );
 
 CREATE TABLE especialidades (
-                          id SERIAL NOT NULL PRIMARY KEY,
-                          nome VARCHAR(50),
-                          area INT,
-                          descricao VARCHAR(500)
+                                id SERIAL NOT NULL PRIMARY KEY,
+                                nome VARCHAR(50),
+                                area INT,
+                                descricao VARCHAR(500)
 );
 
 CREATE TABLE medicos (
@@ -28,28 +29,28 @@ CREATE TABLE enfermeiras (
                              upa_id INT REFERENCES upas(id) ON DELETE CASCADE
 );
 
-CREATE TABLE faxineiros (
-                           id SERIAL NOT NULL PRIMARY KEY,
-                           nome VARCHAR(50),
-                           cpf VARCHAR(50),
-                           upa_id INT REFERENCES upas(id) ON DELETE CASCADE
+CREATE TABLE auxiliar_limpezas (
+                                   id SERIAL NOT NULL PRIMARY KEY,
+                                   nome VARCHAR(50),
+                                   cpf VARCHAR(50),
+                                   upa_id INT REFERENCES upas(id) ON DELETE CASCADE
 );
 
-CREATE TABLE assisSociais (
-                          id SERIAL NOT NULL PRIMARY KEY,
-                          nome VARCHAR(50),
-                          cpf VARCHAR(11) UNIQUE,
-                          email VARCHAR(50),
-                          especialidade_id INT REFERENCES especialidades(id) ON DELETE CASCADE,
-                          upa_id INT REFERENCES upas(id) ON DELETE CASCADE
+CREATE TABLE assistente_socials (
+                                    id SERIAL NOT NULL PRIMARY KEY,
+                                    nome VARCHAR(50),
+                                    cpf VARCHAR(11) UNIQUE,
+                                    email VARCHAR(50),
+                                    especialidade_id INT REFERENCES especialidades(id) ON DELETE CASCADE,
+                                    upa_id INT REFERENCES upas(id) ON DELETE CASCADE
 );
 
 CREATE TABLE recepcionistas (
-                             id SERIAL NOT NULL PRIMARY KEY,
-                             nome VARCHAR(50),
-                             cpf VARCHAR(11) UNIQUE,
-                             email VARCHAR(50),
-                             upa_id INT REFERENCES upas(id) ON DELETE CASCADE
+                                id SERIAL NOT NULL PRIMARY KEY,
+                                nome VARCHAR(50),
+                                cpf VARCHAR(11) UNIQUE,
+                                email VARCHAR(50),
+                                upa_id INT REFERENCES upas(id) ON DELETE CASCADE
 );
 
 
@@ -81,17 +82,17 @@ values('cristiana', '99999999999', '04-04-2000', 2),
       ('kauani', '77777777777', '09-01-1989', 3),
       ('julio', '66666666666', '18-01-1987', 4);
 
-insert into faxineiros(nome, cpf, upa_id)
+insert into auxiliar_limpezas(nome, cpf, upa_id)
 values('bruce', '12345678910', 1),
       ('joise', '12345678911', 2),
       ('ivone', '12345678912', 4),
       ('mauro', '12345678913', 4);
 
-insert into assisSociais(nome, cpf, email, especialidade_id, upa_id)
-values('suelem', '12345678914', 'suelem@gmail.com', 1, 2),
-      ('giovana', '12345678915', 'giovana@gmail.com', 2, 3),
-      ('nilza', '12345678916', 'nilza@gmail.com', 3, 4),
-      ('jubscleia', '12345678917', 'jubscleia@gmail.com', 4, 1);
+insert into assistente_socials(nome, cpf, email, especialidade_id, upa_id)
+values('suelem', '12345678914', 'suelem@gmail.com', 5, 2),
+      ('giovana', '12345678915', 'giovana@gmail.com', 7, 3),
+      ('nilza', '12345678916', 'nilza@gmail.com', 8, 4),
+      ('jubscleia', '12345678917', 'jubscleia@gmail.com', 6, 1);
 
 insert into recepcionistas(nome, cpf, email, upa_id)
 values('visentina', '12345678918', 'visentina@gmail.com', 1),

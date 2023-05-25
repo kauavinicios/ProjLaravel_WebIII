@@ -47,8 +47,8 @@
             </div>
         </div>
     </nav>
-    <main class="container">
-        <div class="bg-light p-5 rounded">
+    <main class="container section">
+        <div>
             @if (session('msg') )
                 <div class="alert alert-primary">
                     <p>{{ session('msg') }}</p>

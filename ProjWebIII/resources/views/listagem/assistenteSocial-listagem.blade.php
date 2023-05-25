@@ -1,20 +1,8 @@
 @extends('template')
 
 @section('conteudo')
-    <style>
-        .assisSocial {
-            background: url(https://img.freepik.com/vetores-premium/banner-de-fundo-de-tecnologia-azul-moderna-com-quadrado-linha-e-meio-tom_181182-19741.jpg?w=1800);
-            padding: 30px;
-        }
-
-        .assisSocial-int{
-            background-color: #ffffff88;
-            padding: 20px;
-            border-radius: 10px;
-        }
-    </style>
-    <section class="assisSocial">
-        <div class="assisSocial-int">
+    <section>
+        <div class="section-int">
             <h1>Listagem de Assistentes Socias</h1>
             <a class='btn btn-primary' href="novo">Novo</a>
             <table class='table table-bordered table-striped'>

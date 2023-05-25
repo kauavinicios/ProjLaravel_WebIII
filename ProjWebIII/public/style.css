@@ -1,3 +1,6 @@
+:root{
+    background: #00916e;
+}
 .bd-placeholder-img {
     font-size: 1.125rem;
     text-anchor: middle;
@@ -53,10 +56,11 @@ body {
     min-height: 75rem;
     padding-top: 4.5rem;
     color: #222222;
-    background: #00916e;
+    background: url("https://pbs.twimg.com/media/EGm_-cGW4AY7MgZ.jpg:large") no-repeat center top;
+    background-size: 100%;
 }
 .menu{
-    background: #00916e;
+    background: none;
 }
 .menu a:hover{
     background: #220ce0;
@@ -70,4 +74,15 @@ body {
     text-transform: uppercase;
     margin: auto 10px;
     border-radius: 50px;
+}
+
+.section {
+    background: none;
+    padding: 30px;
+    border-radius: 15px;
+}
+.section-int{
+    background: rgba(255, 255, 255, 0.5);
+    padding: 40px;
+    border-radius: 10px;
 }
