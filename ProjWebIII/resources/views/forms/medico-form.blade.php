@@ -24,7 +24,8 @@
         </div>
         <div class="mb-3">
             <label for="datanascimento" class="form-label">Data De Nascimento</label>
-            <input class="form-control @error('datanascimento') is-invalid @enderror" type="date" name="datanascimento" value="{{old('datanascimento', $medico->datanascimento)}}">
+            <?php var_dump($medico->datanascimento); ?>
+            <input class="form-control @error('datanascimento') is-invalid @enderror" type="date" name="datanascimento" value="{{old('datanascimento', $medico->datanascimento->format('y/d/m'))}}">
             @error('datanascimento')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror

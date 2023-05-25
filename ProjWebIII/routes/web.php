@@ -7,6 +7,8 @@ use App\Http\Controllers\MedicoController;
 use App\Http\Controllers\EspecialidadeController;
 use App\Http\Controllers\EnfermeiraController;
 use App\Http\Controllers\RecepcionistaController;
+use \App\Http\Controllers\AssistenteSocialController;
+use App\Http\Controllers\AuxiliarLimpezaController;
 
 /*
 |------------------------------------------------- -------------------------
@@ -52,3 +54,15 @@ Route::get('/recepcionista/novo', [RecepcionistaController::class, 'novo']);
 Route::get('/recepcionista/editar/{id}', [RecepcionistaController::class, 'editar']);
 Route::get('/recepcionista/excluir/{id}', [RecepcionistaController::class, 'excluir']);
 Route::post('/recepcionista/salvar', [RecepcionistaController::class, 'salvar']);
+
+Route::get('/assistenteSocial/listar', [AssistenteSocialController::class, 'listar']);
+Route::get('/assistenteSocial/novo', [AssistenteSocialController::class, 'novo']);
+Route::get('/assistenteSocial/editar/{id}', [AssistenteSocialController::class, 'editar']);
+Route::get('/assistenteSocial/excluir/{id}', [AssistenteSocialController::class, 'excluir']);
+Route::post('/assistenteSocial/salvar', [AssistenteSocialController::class, 'salvar']);
+
+Route::get('/auxiliarLimpeza/listar', [AuxiliarLimpezaController::class, 'listar']);
+Route::get('/auxiliarLimpeza/novo', [AuxiliarLimpezaController::class, 'novo']);
+Route::get('/auxiliarLimpeza/editar/{id}', [AuxiliarLimpezaController::class, 'editar']);
+Route::get('/auxiliarLimpeza/excluir/{id}', [AuxiliarLimpezaController::class, 'excluir']);
+Route::post('/auxiliarLimpeza/salvar', [AuxiliarLimpezaController::class, 'salvar']);

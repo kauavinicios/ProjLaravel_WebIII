@@ -2,7 +2,7 @@
 
 @section('conteudo')
 <h1>Cadastro de Assistente Social</h1>
-<form action="{{url('enfermeira/salvar')}}" method="post" enctype="multipart/form-data">
+<form action="{{url('assistenteSocial/salvar')}}" method="post" enctype="multipart/form-data">
     @csrf
     <input type="hidden" name="id" value="{{$assistenteSocial->id}}">
     <div class="mb-3">
@@ -14,11 +14,21 @@
         <input class="form-control" type="text" name="cpf" value="{{$assistenteSocial->cpf}}">
     </div>
     <div class="mb-3">
-        <label for="datanascimento" class="form-label">Data De Nascimento</label>
-        <input class="form-control" type="date" name="datanascimento" value="{{$assistenteSocial->datanascimento}}">
+        <label for="email" class="form-label">E-mail</label>
+        <input class="form-control" type="email" name="email" value="{{$assistenteSocial->email}}">
     </div>
     <div class="mb-3">
-        <label for="upa_id" class="form-label">Afiliacao</label>
+        <label for="especialidade_id" class="form-label">Especialidade</label>
+        <select class="form-select" name="especialidade_id" >
+            @foreach($especialidades as $especialidade)
+                @if($especialidade->area == $area)
+                    <option {{ $especialidade->id == $assistenteSocial->especialidade_id ?'selected': ''}} value="{{$especialidade->id}} ">{{$especialidade->nome}}</option>
+                @endif
+            @endforeach
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="upa_id" class="form-label">Afiliação</label>
         <select class="form-select" name="upa_id" >
             @foreach($upas as $upa)
             <option {{ $upa->id == $assistenteSocial->upa_id ?'selected': ''}} value="{{$upa->id}} ">{{$upa->nome}}</option>
