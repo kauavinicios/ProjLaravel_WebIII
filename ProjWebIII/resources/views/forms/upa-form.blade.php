@@ -13,7 +13,10 @@
             <label for="localizacao" class="form-label">Localização</label>
             <input class="form-control" type="text" name="localizacao" value="{{$upa->localizacao}}">
         </div>
-
+        <div class="mb-3">
+            <label for="arquivo" class="form-label">Imagem</label>
+            <input class="form-control" type="file" name="arquivo" accept="image/*">
+        </div>
         <button type="submit" name="button">Salvar</button>
     </form>
 @endsection

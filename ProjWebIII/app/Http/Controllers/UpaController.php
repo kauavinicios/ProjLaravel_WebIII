@@ -30,6 +30,16 @@ class UpaController extends Controller
         } else {
             $upa = Upa::find($request->input('id'));
         }
+        if ($request->hasFile('arquivo')) {
+            $file = $request->file('arquivo');
+            $upload = $file->store('public/imagens');
+            $upload = explode("/", $upload);
+            $tamanho = sizeof($upload);
+            if ($upa->imagem != "") {
+                Storage::delete("public/imagens/" . $upa->imagem);
+            }
+            $upa->imagem = $upload[$tamanho - 1];
+        }
         $upa->nome = $request->input('nome');
         $upa->localizacao = $request->input('localizacao');
         $upa->save();
@@ -38,6 +48,9 @@ class UpaController extends Controller
 
     function excluir($id) {
         $model = Upa::find($id);
+        if ($model->imagem != "") {
+            Storage::delete("public/imagens/".$model->imagem);
+        }
         $model->delete($id);
         return redirect('upa/listar');
     }

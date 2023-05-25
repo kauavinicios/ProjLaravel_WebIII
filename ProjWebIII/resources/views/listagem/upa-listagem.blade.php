@@ -1,17 +1,17 @@
 @extends('template')
 
 @section('conteudo')
-    <style>
-        .upas {
-            background: url(https://i.pinimg.com/originals/fb/47/62/fb4762604e8db09ae471fd74fbde5630.jpg);
-            padding: 30px;
-        }
-        .upas-int{
-            background-color: #ffffff88;
-            padding: 20px;
-            border-radius: 10px;
-        }
-    </style>
+{{--    <style>--}}
+{{--        .upas {--}}
+{{--            background: url(https://i.pinimg.com/originals/fb/47/62/fb4762604e8db09ae471fd74fbde5630.jpg);--}}
+{{--            padding: 30px;--}}
+{{--        }--}}
+{{--        .upas-int{--}}
+{{--            background-color: #ffffff88;--}}
+{{--            padding: 20px;--}}
+{{--            border-radius: 10px;--}}
+{{--        }--}}
+{{--    </style>--}}
     <section class="upas">
         <div class="upas-int">
             <h1>Listagem de upas</h1>
@@ -19,7 +19,7 @@
             <table class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>Imagem</th>
                     <th>Nome</th>
                     <th>Localização</th>
                     <th></th>
@@ -29,7 +29,11 @@
                 <tbody>
                     @foreach($upas as $upa)
                       <tr>
-                        <td>{{$upa->id}}</td>
+                          <td>
+                              @if ($upa->imagem != "")
+                                  <img style="width: 50px;" src="{{asset('storage/imagens/'.$upa->imagem) }}">
+                              @endif
+                          </td>
                         <td>{{$upa->nome}}</td>
                         <td>{{$upa->localizacao}}</td>
                         <td><a class='btn btn-primary' href='/upa/editar/{{$upa->id}}'>+</a></td>
