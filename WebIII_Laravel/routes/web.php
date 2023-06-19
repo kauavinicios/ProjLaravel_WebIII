@@ -2,13 +2,15 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Http\Request;
 
 use App\Http\Controllers\UpaController;
 use App\Http\Controllers\MedicoController;
 use App\Http\Controllers\EspecialidadeController;
 use App\Http\Controllers\EnfermeiraController;
 use App\Http\Controllers\RecepcionistaController;
-use \App\Http\Controllers\AssistenteSocialController;
+use App\Http\Controllers\AssistenteSocialController;
 use App\Http\Controllers\AuxiliarLimpezaController;
 
 /*
@@ -37,6 +39,18 @@ Route::get('/dashboard', function () {
 Route::get('/email/verify', function () {
     return view('auth.verify-email');
 })->middleware('auth')->name('verification.notice');
+
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+
+    return redirect('/home');
+})->middleware(['auth', 'signed'])->name('verification.verify');
+
+Route::post('/email/verification-notification', function (Request $request) {
+    $request->user()->sendEmailVerificationNotification();
+
+    return back()->with('message', 'Verification link sent!');
+})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
 Route::get('/upa/listar', [UpaController::class, 'listar']);
 Route::get('/medico/listar', [MedicoController::class, 'listar']);
