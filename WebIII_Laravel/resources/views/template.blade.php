@@ -41,7 +41,17 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{{url('/auxiliarLimpeza/listar')}}">Axiliares De Limpesa</a>
                     </li>
-
+                    @if (Route::has('login'))
+                        @auth
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="{{ url('/profile') }}">Profile</a>
+                            </li>
+                        @else
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="{{ route('login') }}">Log in</a>
+                            </li>
+                        @endauth
+                    @endif
                 </ul>
 
             </div>

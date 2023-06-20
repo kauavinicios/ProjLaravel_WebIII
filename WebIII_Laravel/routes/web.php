@@ -25,11 +25,11 @@ use App\Http\Controllers\AuxiliarLimpezaController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
-Route::get('/index', function () {
-    return view('index');
+Route::get('/cad', function () {
+    return view('welcome');
 });
 
 Route::get('/dashboard', function () {
