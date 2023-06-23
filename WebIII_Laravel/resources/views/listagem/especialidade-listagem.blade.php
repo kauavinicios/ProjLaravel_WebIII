@@ -4,7 +4,9 @@
     <section>
         <div class="section-int">
             <h1>Listagem de Especialidades</h1>
-            <a class="btn btn-primary" href="novo">Novo</a>
+            @if (Auth::check())
+                <a class="btn btn-primary" href="novo">Novo</a>
+            @endif
             <table class="table table-bordered table-striped">
                 <thead>
                 <tr>
@@ -21,8 +23,10 @@
                         <td>{{$especialidade->id}}</td>
                         <td>{{$especialidade->nome}}</td>
                         <td>{{$especialidade->descricao}}</td>
-                        <td><a class='btn btn-primary' href='/especialidade/editar/{{$especialidade->id}}'>+</a></td>
-                        <td><a class='btn btn-danger' href='/especialidade/excluir/{{$especialidade->id}}'>-</a></td>
+                        @if (Auth::check())
+                            <td><a class='btn btn-primary' href='/especialidade/editar/{{$especialidade->id}}'>+</a></td>
+                            <td><a class='btn btn-danger' href='/especialidade/excluir/{{$especialidade->id}}'>-</a></td>
+                        @endif
                     </tr>
                 @endforeach
                 </tbody>

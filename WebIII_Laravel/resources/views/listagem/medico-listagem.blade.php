@@ -3,8 +3,13 @@
 @section('conteudo')
     <section>
         <div class="section-int">
-            <h1>Listagem de Medicos</h1>
-            <a class='btn btn-primary' href="novo">Novo</a>
+            <h1>Listagem de Médicos</h1>
+            @if (Auth::check())
+                @if (Auth::check())
+                    <a class='btn btn-primary' href="novo">Novo</a>
+                    <a class="btn btn-primary" href="relatorio">Gerar Relatorio</a>
+                @endif
+            @endif
             <table class='table table-bordered table-striped'>
                 <thead>
                 <tr>
@@ -27,8 +32,10 @@
                     <td>{{$medico->crm}}</td>
                     <td>{{$medico->especialidade->nome}}</td>
                     <td>{{$medico->upa->nome}}</td>
-                    <td><a class='btn btn-primary' href='/medico/editar/{{$medico->id}}'>+</a></td>
-                    <td><a class='btn btn-danger' href='/medico/excluir/{{$medico->id}}'>-</a></td>
+                      @if (Auth::check())
+                        <td><a class='btn btn-primary' href='/medico/editar/{{$medico->id}}'>+</a></td>
+                        <td><a class='btn btn-danger' href='/medico/excluir/{{$medico->id}}'>-</a></td>
+                      @endif
                   </tr>
                 @endforeach
                 </tbody>

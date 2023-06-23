@@ -4,7 +4,10 @@
     <section>
         <div class="section-int">
             <h1>Listagem de Recepcionista</h1>
-            <a class="btn btn-primary" href="novo">Novo</a>
+            @if (Auth::check())
+                <a class="btn btn-primary" href="novo">Novo</a>
+                <a class="btn btn-primary" href="relatorio">Gerar Relatorio</a>
+            @endif
             <table class="table table-bordered table-striped">
                 <thead>
                 <tr>
@@ -23,8 +26,10 @@
                         <td>{{$recepcionista->cpf}}</td>
                         <td>{{$recepcionista->email}}</td>
                         <td>{{$recepcionista->upa->nome}}</td>
-                        <td><a class='btn btn-primary' href='/recepcionista/editar/{{$recepcionista->id}}'>+</a></td>
-                        <td><a class='btn btn-danger' href='/recepcionista/excluir/{{$recepcionista->id}}'>-</a></td>
+                        @if (Auth::check())
+                            <td><a class='btn btn-primary' href='/recepcionista/editar/{{$recepcionista->id}}'>+</a></td>
+                            <td><a class='btn btn-danger' href='/recepcionista/excluir/{{$recepcionista->id}}'>-</a></td>
+                        @endif
                     </tr>
                 @endforeach
                 </tbody>

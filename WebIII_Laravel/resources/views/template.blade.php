@@ -39,13 +39,19 @@
                         <a class="nav-link active" aria-current="page" href="{{url('/assistenteSocial/listar')}}">Assistentes Sociais</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{url('/auxiliarLimpeza/listar')}}">Axiliares De Limpesa</a>
+                        <a class="nav-link active" aria-current="page" href="{{url('/auxiliarLimpeza/listar')}}">Auxiliares De Limpeza</a>
                     </li>
                     @if (Route::has('login'))
                         @auth
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="{{ url('/profile') }}">Profile</a>
                             </li>
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <a class="nav-link active" aria-current="page" href="{{route('logout')}}" onclick="event.preventDefault();
+                                this.closest('form').submit();">Sair</a>
+
+                            </form>
                         @else
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="{{ route('login') }}">Log in</a>
@@ -53,7 +59,6 @@
                         @endauth
                     @endif
                 </ul>
-
             </div>
         </div>
     </nav>

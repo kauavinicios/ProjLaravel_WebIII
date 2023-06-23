@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Upa;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class UpaController extends Controller
 {
@@ -53,5 +54,11 @@ class UpaController extends Controller
         }
         $model->delete($id);
         return redirect('upa/listar');
+    }
+
+    function relatorio() {
+        $upas = Upa::orderBy('nome')->get();
+        $pdf = Pdf::loadView('upaRelatorio', compact('upas'));
+        return $pdf->download('relatorio-upa.pdf');
     }
 }

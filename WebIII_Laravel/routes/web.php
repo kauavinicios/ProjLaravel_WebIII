@@ -13,6 +13,7 @@ use App\Http\Controllers\RecepcionistaController;
 use App\Http\Controllers\AssistenteSocialController;
 use App\Http\Controllers\AuxiliarLimpezaController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,8 +34,8 @@ Route::get('/cad', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+    return view('index');
+})->middleware(['auth', 'verified'])->name('index');
 
 Route::get('/email/verify', function () {
     return view('auth.verify-email');
@@ -70,11 +71,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/upa/editar/{id}', [UpaController::class, 'editar']);
     Route::get('/upa/excluir/{id}', [UpaController::class, 'excluir']);
     Route::post('/upa/salvar', [UpaController::class, 'salvar']);
+    Route::get('/upa/relatorio', [UpaController::class, 'relatorio']);
 
     Route::get('/medico/novo', [MedicoController::class, 'novo']);
     Route::get('/medico/editar/{id}', [MedicoController::class, 'editar']);
     Route::get('/medico/excluir/{id}', [MedicoController::class, 'excluir']);
     Route::post('/medico/salvar', [MedicoController::class, 'salvar']);
+    Route::get('/medico/relatorio', [MedicoController::class, 'relatorio']);
 
     Route::get('/especialidade/novo', [EspecialidadeController::class, 'novo']);
     Route::get('/especialidade/editar/{id}', [EspecialidadeController::class, 'editar']);

@@ -7,6 +7,7 @@ use App\Models\Upa;
 use App\Models\Medico;
 use Illuminate\Http\Request;
 use App\Http\Requests\MedicoRequest;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class MedicoController extends Controller
 {
@@ -52,5 +53,11 @@ class MedicoController extends Controller
         $model = Especialidade::find($id);
         $model->delete($id);
         return redirect('medico/listar');
+    }
+
+    function relatorio() {
+        $medicos = Medico::orderBy('nome')->get();
+        $pdf = Pdf::loadView('medicoRelatorio', compact('medicos'));
+        return $pdf->download('relatorio-medico.pdf');
     }
 }

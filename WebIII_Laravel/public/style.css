@@ -60,7 +60,7 @@ body {
     background-size: 100%;
 }
 .menu{
-    background: #00916e;
+    background: #00000000;
 }
 .menu a:hover{
     background: #220ce0;
@@ -74,6 +74,7 @@ body {
     text-transform: uppercase;
     margin: auto 10px;
     border-radius: 50px;
+    font-size: 15px;
 }
 
 .section {
